@@ -1,0 +1,87 @@
+:root {
+  --sudoku-size: 42px;
+
+  --text-color: #555;
+  --blue: #339af0;
+  --blue-light: #74c0fc;
+  --gray: #868e96;
+  --gray-light: #ced4da;
+  --red: #fa5252;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.btn {
+  font-size: 3.2rem;
+  color: var(--text-color);
+  background-color: var(--blue-light);
+  padding: 12px 80px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--blue);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.sudoku-grid {
+  /* background-color: antiquewhite; */
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  gap: 8px;
+}
+
+.sudoku-cell {
+  /* background-color: aqua; */
+  outline: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+
+  align-items: center;
+  text-align: center;
+  width: var(--sudoku-size);
+  height: var(--sudoku-size);
+
+  border: 2px solid var(--gray-light);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sudoku-cell:hover {
+  border-color: var(--blue-light);
+}
+
+.sudoku-cell:focus {
+  border-color: var(--blue);
+}
+
+.sudoku-cell.err {
+  color: var(--red);
+  border-color: var(--red);
+}
